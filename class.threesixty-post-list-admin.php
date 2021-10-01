@@ -34,11 +34,12 @@ class Threesixty_Post_List_Admin {
     public static function admin_menu() {
         add_menu_page(
             __( 'Threesixty Post List', 'threesixty-post-list' ),
-            'Threesixty Post List',
+            __( 'Threesixty Post List', 'threesixty-post-list' ),
             'manage_options',
             'threesixty-post-list',
             array('Threesixty_Post_List_Admin', 'display_setting_page'),
-            6);
+            'dashicons-editor-table',
+            100);
         
         add_submenu_page(
             'threesixty-post-list', 
@@ -50,7 +51,7 @@ class Threesixty_Post_List_Admin {
         
         add_submenu_page(
             'threesixty-post-list', 
-            'Edit Post List',
+            'Delete Post List',
             '', 
             'manage_options',
             'threesixty-post-list-delete',

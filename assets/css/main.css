@@ -9,10 +9,9 @@
 .threesixty-post-list .portfolio-grid {position: relative}
 .threesixty-post-list .list-loader { display: box; position: absolute; top: 0; left: 0; bottom: 0; right: 0; background-color: rgba(255,255,255,0.8); z-index: 1; }
 .threesixty-post-list .list-loader .spinner-border { position: absolute; left: 50%; top: 50px; }
-.portfolio-grid .card { -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.23);
--moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.23);
-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.23); }
-.threesixty-post-list .portfolio-grid .card .card-body .card-title { font-size: 25px; }
-.threesixty-post-list .portfolio-grid .card .card-body .card-title a { color: #466071; }
-.threesixty-post-list .portfolio-grid .card .card-body .icon-link { display: inline-block; margin-right: 15px; color: #466071;}
-.threesixty-post-list .portfolio-grid .card .card-body .icon-link .dashicons { font-size: 30px; }
+.portfolio-grid .grid-col { margin-bottom: 30px; }
+.portfolio-grid .grid-col .card { -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.23); -moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.23); box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.23); }
+.threesixty-post-list .portfolio-grid .grid-col .card .card-body .card-title { font-size: 25px; }
+.threesixty-post-list .portfolio-grid .grid-col .card .card-body .card-title a { color: #466071; }
+.threesixty-post-list .portfolio-grid .grid-col .card .card-body .icon-link { display: inline-block; margin-right: 15px; color: #466071;}
+.threesixty-post-list .portfolio-grid .grid-col .card .card-body .icon-link .dashicons { font-size: 30px; }

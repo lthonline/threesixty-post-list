@@ -8,7 +8,7 @@
 
 
 ?>
-<div class="col-md-4">
+<div class="col-md-4 grid-col">
     <div class="card">
         <?php 
             $allFieldsObject = get_field_objects(get_the_ID());
@@ -17,10 +17,9 @@
             
             $tour_field_name = 'virtual_tour_link';
             $virtual_tour_url = null;
-            if(array_key_exists($tour_field_name, $allFieldsObject)) {
+            if($allFieldsObject != null && array_key_exists($tour_field_name, $allFieldsObject)) {
                 $virtual_tour_url = $allFieldsObject[$tour_field_name]['value'];
-            }
-            
+            }            
             $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(),'full');
             echo Threesixty_Post_List_Renderer::render_post_image($thumbnail_url, $post_title, $virtual_tour_url);
         ?>
