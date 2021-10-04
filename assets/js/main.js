@@ -21,7 +21,8 @@ jQuery( document ).ready(function($) {
             data: {
                 action: 'filter_posts',
                 taxonomy: $this.data('slug'),
-                post_type: $this.data('post_type')
+                post_type: $this.data('post_type'),
+                taxonomy_type: $this.data('taxonomy_type')
             },
             success: function(response) {
                 $('.portfolio-grid').html(response);

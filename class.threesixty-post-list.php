@@ -158,9 +158,9 @@ class Threesixty_Post_List {
         
             if($terms) { 
                 $response .= '<div class="row"><ul class="nav tax-nav">';
-                    $response .= '<li class="nav-item tax-nav-item active"><a class="nav-link tax-nav-link" href="#!" data-slug="all" data-post_type="' . $post_type . '">All</a></li>';
+                    $response .= '<li class="nav-item tax-nav-item active"><a class="nav-link tax-nav-link" href="#!" data-slug="all" data-post_type="' . $post_type . '" data-taxonomy_type="'. $taxonomy_type .'">All</a></li>';
                 foreach($terms as $term) {
-                    $response .= '<li class="nav-item tax-nav-item"><a class="nav-link tax-nav-link" href="#!" data-slug="' . $term->slug . '" data-post_type="' . $post_type . '">'. $term->name .'</a></li>';
+                    $response .= '<li class="nav-item tax-nav-item"><a class="nav-link tax-nav-link" href="#!" data-slug="' . $term->slug . '" data-post_type="' . $post_type . '"  data-taxonomy_type="'. $taxonomy_type .'">'. $term->name .'</a></li>';
                 }
                 $response .= '</ul></div>';            
             }
@@ -186,6 +186,7 @@ class Threesixty_Post_List {
     }
     
     public static function filter_posts() {
+        $taxonomy_type = filter_input(INPUT_POST, 'taxonomy_type');
         $term = filter_input(INPUT_POST, 'taxonomy');
         $post_type = filter_input(INPUT_POST, 'post_type');
         
@@ -198,7 +199,7 @@ class Threesixty_Post_List {
         if($term != 'all') {
             $post_args['tax_query'] = array(
                 array(
-                    'taxonomy' => 'portfolio_taxonomies',
+                    'taxonomy' => $taxonomy_type,
                     'field' => 'slug',
                     'terms' => $term,
                     'operator' => 'IN'
