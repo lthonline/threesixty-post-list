@@ -21,11 +21,11 @@
                 $virtual_tour_url = $allFieldsObject[$tour_field_name]['value'];
             }            
             $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(),'full');
-            echo Threesixty_Post_List_Renderer::render_post_image($thumbnail_url, $post_title, $virtual_tour_url);
+            echo Threesixty_Post_List_Renderer::render_post_image($thumbnail_url, $post_title, $virtual_tour_url, true);
         ?>
         
         <div class="card-body text-center">
-            <?php echo Threesixty_Post_List_Renderer::render_post_title($post_title, '<h2>', $virtual_tour_url, 'card-title'); ?>
+            <?php echo Threesixty_Post_List_Renderer::render_post_title($post_title, '<h2>', $virtual_tour_url, 'card-title', true); ?>
             <?php  echo Threesixty_Post_List_Renderer::render_post_content($allFieldsObject); ?>
         </div>
     </div>

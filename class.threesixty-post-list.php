@@ -146,7 +146,7 @@ class Threesixty_Post_List {
         $terms = get_terms($term_args);
                 
         $post_args = array(
-            'numberposts'   => $itemPerPage,
+            'posts_per_page'   => $itemPerPage,
             'orderby'       => 'title',
             'post_type'     => $post_type
         );
@@ -191,7 +191,7 @@ class Threesixty_Post_List {
         $post_type = filter_input(INPUT_POST, 'post_type');
         
         $post_args = array(
-            'numberposts'   => -1,
+            'posts_per_page'   => -1,
             'orderby'       => 'title',
             'post_type'     => $post_type
         );
