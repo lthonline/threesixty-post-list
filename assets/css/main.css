@@ -15,3 +15,11 @@
 .threesixty-post-list .portfolio-grid .grid-col .card .card-body .card-title a { color: #466071; }
 .threesixty-post-list .portfolio-grid .grid-col .card .card-body .icon-link { display: inline-block; margin-right: 15px; color: #466071;}
 .threesixty-post-list .portfolio-grid .grid-col .card .card-body .icon-link .dashicons { font-size: 30px; }
+.threesixty-post-list .mobile-filters { display: none; }
+.threesixty-post-list .mobile-filters label { width: 100%; }
+.threesixty-post-list .mobile-filters .custom-select { max-width: 300px; }
+
+@media only screen and (max-width: 991px) {
+    .threesixty-post-list .portfolio-desktop-menu { display: none; }
+    .threesixty-post-list .mobile-filters { display: block; }
+}

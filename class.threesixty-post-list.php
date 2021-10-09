@@ -157,12 +157,20 @@ class Threesixty_Post_List {
         $response .= '<div class="threesixty-post-list">';
         
             if($terms) { 
-                $response .= '<div class="row"><ul class="nav tax-nav">';
+                $response .= '<div class="row"><ul class="nav tax-nav portfolio-desktop-menu">';
                     $response .= '<li class="nav-item tax-nav-item active"><a class="nav-link tax-nav-link" href="#!" data-slug="all" data-post_type="' . $post_type . '" data-taxonomy_type="'. $taxonomy_type .'">All</a></li>';
                 foreach($terms as $term) {
                     $response .= '<li class="nav-item tax-nav-item"><a class="nav-link tax-nav-link" href="#!" data-slug="' . $term->slug . '" data-post_type="' . $post_type . '"  data-taxonomy_type="'. $taxonomy_type .'">'. $term->name .'</a></li>';
                 }
-                $response .= '</ul></div>';            
+                $response .= '</ul>';
+                $response .= '<div class="col-12 form-group mobile-filters text-center">';
+                $response .= '<label for="CategoryFilterOptions"><small>Filter portfolios by category</small></label>';
+                $response .= '<select id="CategoryFilterOptions" class="custom-select form-control">';
+                $response .= '<option data-slug="all" data-post_type="' . $post_type . '"  data-taxonomy_type="'. $taxonomy_type .'" selected>All</option>';
+                foreach($terms as $term) {
+                    $response .= '<option data-slug="' . $term->slug . '" data-post_type="' . $post_type . '"  data-taxonomy_type="'. $taxonomy_type .'">'. $term->name .'</option>';
+                }
+                $response .= '</select></div></div>';            
             }
 
             $response .= '<div style="position:relative;">';
